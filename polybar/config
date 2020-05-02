@@ -1,0 +1,476 @@
+[colors]
+nord0 = #2E3440
+nord1 = #3B4252
+nord2 = #434C5E
+nord3 = #4C566A
+nord3.25 = #546076
+nord3.5 = #5C6A82
+
+nord4 = #D8DEE9
+nord5 = #E5E9F0
+nord6 = #ECEFF4
+
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+nord10 = #5E81AC
+
+nord11 = #BF616A
+nord12 = #D08770
+nord13 = #EBCB8B
+nord14 = #A3BE8C
+nord15 = #B48EAD
+
+;----------------------------------------------------------
+
+[paddings]
+inner = 2.5
+outer = 5
+
+;----------------------------------------------------------
+
+[bar/main]
+monitor = HDMI-0 
+dpi = 92
+height = 24
+fixed-center = true
+; 00000000
+background = ${colors.nord0}
+foreground = ${colors.nord6}
+
+border-top-size = 0 ;15
+border-left-size = 0 ;15
+border-right-size = 0 ;15
+
+font-0 = Roboto:weight=regular:size=10;3
+font-1 = Material Icons:size=12;4
+font-2 = NotoEmoji Nerd Font:size=15;3
+font-3 = "scientifica:size=14;3"
+
+modules-left = i3
+modules-center =
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio padding6 right5 memory cpu temperature right4 wlan eth right3 time date right2 updates right1 power
+
+tray-position = right
+tray-maxsize = 32
+tray-background = ${colors.nord10}
+tray-padding = ${paddings.outer}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;----------------------------------------------------------
+
+[bar/external]
+monitor = DP3
+dpi = 144
+height = 40.5
+fixed-center = true
+
+background = #00000000
+foreground = ${colors.nord6}0
+border-top-size = 15
+border-left-size = 15
+border-right-size = 15
+
+font-0 = Roboto:weight=regular:size=10;3
+font-1 = Material Icons:size=15;7
+font-2 = NotoEmoji Nerd Font:size=15;6
+
+modules-left = i3
+modules-center =
+modules-right = right7 padding7 player-mpris-tail right6 padding6 pulseaudio right5 memory cpu temperature right4 wlan eth right3 time date right2 updates battery right1 power
+
+tray-position = right
+tray-maxsize = 32
+tray-background = ${colors.nord10}
+tray-padding = ${paddings.outer}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;----------------------------------------------------------
+
+[module/left]
+type = custom/text
+content = "%{T3}%{T-}"
+
+[module/right1]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord0}
+content-foreground = ${colors.nord10}
+
+[module/right2]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord1}
+content-foreground = ${colors.nord0}
+
+[module/right3]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord2}
+content-foreground = ${colors.nord1}
+
+[module/right4]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord3}
+content-foreground = ${colors.nord2}
+
+[module/right5]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord3.25}
+content-foreground = ${colors.nord3}
+
+[module/right6]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${colors.nord3.5}
+content-foreground = ${colors.nord3.25}
+
+[module/right7]
+type = custom/text
+content = "%{T3}%{T-}"
+content-foreground = ${colors.nord3.5}
+
+[module/padding6]
+type = custom/text
+content = "%{B#546076}%{F}    %{B- F-}"
+content-foreground = ${colors.nord3.25}
+
+[module/padding7]
+type = custom/text
+content = "%{B#5C6A82}%{F}  %{B- F-}"
+content-foreground = ${colors.nord3.5}
+
+;----------------------------------------------------------
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;ﭮ
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+pin-workspaces = true
+
+label-mode-background = ${colors.nord13}
+label-mode-foreground = ${colors.nord0}
+label-mode-padding = ${paddings.outer}
+
+label-focused = %icon%
+label-focused-background = ${colors.nord10}
+label-focused-foreground = ${colors.nord6}
+label-focused-padding = ${paddings.outer}
+
+label-unfocused = %icon%
+label-unfocused-background = ${colors.nord0}
+label-unfocused-foreground = ${colors.nord6}
+label-unfocused-padding = ${paddings.outer}
+
+label-visible = %icon%
+label-visible-background = ${colors.nord0}
+label-visible-foreground = ${colors.nord6}
+label-visible-padding = ${paddings.outer}
+
+label-urgent = %icon%
+label-urgent-background = ${colors.nord0}
+label-urgent-foreground = ${colors.nord13}
+label-urgent-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/power]
+type = custom/menu
+
+format = <label-toggle><menu>
+expand-right = true
+
+format-spacing = 0
+
+label-open = 
+label-open-background = ${colors.nord10}
+label-open-foreground = ${colors.nord6}
+label-open-padding = ${paddings.inner}
+
+label-close = 
+label-close-background = ${colors.nord10}
+label-close-padding = ${paddings.inner}
+
+;menu-0-5 = 
+;menu-0-5-exec = caffeine -a
+;menu-0-5-background = ${colors.nord10}
+;menu-0-5-padding = ${paddings.inner}
+
+;menu-0-6 = 
+;menu-0-6-exec = caffeine -d
+;menu-0-6-background = ${colors.nord10}
+;menu-0-6-padding = ${paddings.inner}
+
+menu-0-0 = 
+menu-0-0-exec = i3lock-fancy -p
+menu-0-0-background = ${colors.nord10}
+menu-0-0-padding = ${paddings.inner}
+
+menu-0-1 = 
+menu-0-1-exec = i3-msg exit
+menu-0-1-background = ${colors.nord10}
+menu-0-1-padding = ${paddings.inner}
+
+menu-0-2 = 
+menu-0-2-exec = systemctl suspend
+menu-0-2-background = ${colors.nord10}
+menu-0-2-padding = ${paddings.inner}
+
+menu-0-3 = 
+menu-0-3-exec = reboot
+menu-0-3-background = ${colors.nord10}
+menu-0-3-padding = ${paddings.inner}
+
+menu-0-4 = 
+menu-0-4-exec = poweroff
+menu-0-4-background = ${colors.nord10}
+menu-0-4-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/battery]
+type = custom/script
+exec = ~/.config/polybar/scripts/battery-combined-udev.sh
+tail = true
+
+format-background = ${colors.nord0}
+
+;----------------------------------------------------------
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-arch-combined.sh
+interval = 600
+format-padding = ${paddings.inner}
+label-padding-left = ${paddings.inner}
+
+format-background = ${colors.nord0}
+
+;----------------------------------------------------------
+
+[module/caffeine]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-open-padding = 0
+label-close-padding = 1
+label-separator = " "
+
+label-open-padding-left = ${paddings.inner}
+label-close-padding-left = ${paddings.inner}
+format-background = ${colors.nord0}
+
+menu-0-0 = 
+menu-0-0-exec = caffeine -a
+menu-0-1 = 
+menu-0-1-exec = caffeine -d
+menu-0-2 = 
+menu-0-2-exec = caffeine kill
+
+;----------------------------------------------------------
+
+[module/date]
+type = internal/date
+
+interval = 1
+date = "%d/%m/%Y"
+
+label =  %date%
+format-background = ${colors.nord1}
+label-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/time]
+type = internal/date
+
+interval = 1
+time = %H:%M:%S
+
+label =  %time%
+format-background = ${colors.nord1}
+format-padding = ${paddings.inner}
+label-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/eth]
+type = internal/network
+interface = enp0s31f6
+interval = 1
+
+label-connected =   %downspeed:8%  %upspeed:8%
+label-connected-padding-left = ${paddings.inner}
+label-connected-background = ${colors.nord2}
+
+;----------------------------------------------------------
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 1
+
+label-connected = %{A1:networkmanager_dmenu:}  %signal%%%{A}  %downspeed:8%  %upspeed:8%
+format-connected-padding = ${paddings.inner}
+label-connected-padding-left = ${paddings.inner}
+format-connected-background = ${colors.nord2}
+
+label-disconnected = %{A1:networkmanager_dmenu:}%{A}
+format-disconnected-padding = ${paddings.inner}
+label-disconnected-padding-left = ${paddings.inner}
+label-disconnected-foreground = ${colors.nord4}
+format-disconnected-background = ${colors.nord2}
+
+;----------------------------------------------------------
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 9
+warn-temperature = 80
+
+format = <label>
+label =  %temperature-c%
+format-background = ${colors.nord3}
+
+format-warn = <label-warn>
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.nord12}
+label-warn-background = ${colors.nord3}
+
+label-padding-left = ${paddings.inner}
+label-warn-padding-left = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+
+format = <label>
+label = 龍 %percentage%%
+format-background = ${colors.nord3}
+format-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/memory]
+type = internal/memory
+interval = 0.5
+
+format = <label>
+label =  %mb_used%
+format-background = ${colors.nord3}
+format-padding = ${paddings.inner}
+
+;----------------------------------------------------------
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <ramp> <label>
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+
+format-background = ${colors.nord3.25}
+
+;----------------------------------------------------------
+
+[module/alsa]
+type = internal/alsa
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+
+headphone-id = 21
+
+mapped = true
+
+label-muted = 
+label-muted-foreground = ${colors.nord4}
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+
+format-volume-background = ${colors.nord3.5}
+format-volume-padding = ${paddings.outer}
+label-muted-background = ${colors.nord3.5}
+label-muted-padding = ${paddings.outer}
+
+;----------------------------------------------------------
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+use-ui-max = true
+
+interval = 5
+
+label-muted = 
+label-muted-foreground = ${colors.nord4}
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+
+format-volume-background = ${colors.nord3.25}
+label-muted-background = ${colors.nord3.25}
+
+;----------------------------------------------------------
+
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {artist} - {title}'
+tail = true
+click-middle = ~/.config/polybar/scripts/player-mpris-tail.py play-pause &
+click-left = ~/.config/polybar/scripts/player-mpris-tail.py next &
+click-right = ~/.config/polybar/scripts/player-mpris-tail.py previous &
+
+format-background = ${colors.nord3.5}
+
+;----------------------------------------------------------
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true

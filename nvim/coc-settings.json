@@ -1,0 +1,19 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "tsserver.formatOnType": false,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 4,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": true,
+  "prettier.jsxSingleQuote": true,
+  "coc.preferences.formatOnType": true
+}
